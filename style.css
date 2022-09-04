@@ -50,6 +50,10 @@ label {
   border-radius: 5px;
 }
 
+.container .free-trial-form input:focus {
+  outline: 1px solid hsl(248, 32%, 49%);
+}
+
 .container .free-trial-form input::placeholder {
   font-weight: bold;
 }
