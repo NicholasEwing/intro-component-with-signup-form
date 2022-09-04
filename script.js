@@ -2,6 +2,7 @@ const firstName = document.querySelector("#first-name");
 const lastName = document.querySelector("#last-name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+const submitButton = document.querySelector("button");
 
 const firstNameError = document.querySelector(".first-name-error");
 const lastNameError = document.querySelector(".last-name-error");
@@ -16,6 +17,11 @@ const validateEmail = (email) => {
     );
 };
 
+const disableButton = () => {
+  submitButton.classList.add("disabled");
+  submitButton.disabled = true;
+};
+
 // if no first name, show first name error
 
 // check if there's a first name entered
@@ -24,6 +30,7 @@ firstName.addEventListener("blur", (event) => {
 
   if (!firstName) {
     firstNameError.classList.remove("hidden");
+    disableButton();
   }
 });
 
@@ -33,6 +40,7 @@ lastName.addEventListener("blur", (event) => {
 
   if (!lastName) {
     lastNameError.classList.remove("hidden");
+    disableButton();
   }
 });
 
@@ -41,8 +49,9 @@ email.addEventListener("blur", (event) => {
   const email = event.target.value;
   const isValid = validateEmail(email);
 
-  if (!isValid) {
+  if (email || !isValid) {
     emailError.classList.remove("hidden");
+    disableButton();
   }
 });
 
@@ -52,5 +61,6 @@ password.addEventListener("blur", (event) => {
 
   if (!password) {
     passwordError.classList.remove("hidden");
+    disableButton();
   }
 });
