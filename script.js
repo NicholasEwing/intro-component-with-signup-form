@@ -17,6 +17,11 @@ const validateEmail = (email) => {
     );
 };
 
+const enableButton = () => {
+  submitButton.classList.remove("disabled");
+  submitButton.disabled = false;
+};
+
 const disableButton = () => {
   submitButton.classList.add("disabled");
   submitButton.disabled = true;
@@ -41,6 +46,8 @@ lastName.addEventListener("blur", (event) => {
   if (!lastName) {
     lastNameError.classList.remove("hidden");
     disableButton();
+  } else {
+    enableButton();
   }
 });
 
@@ -52,6 +59,8 @@ email.addEventListener("blur", (event) => {
   if (email || !isValid) {
     emailError.classList.remove("hidden");
     disableButton();
+  } else {
+    enableButton();
   }
 });
 
@@ -62,5 +71,7 @@ password.addEventListener("blur", (event) => {
   if (!password) {
     passwordError.classList.remove("hidden");
     disableButton();
+  } else {
+    enableButton();
   }
 });
