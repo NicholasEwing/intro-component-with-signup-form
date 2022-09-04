@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./script.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -40,27 +41,35 @@
           <input
             type="text"
             name="First Name"
-            id="First Name"
+            id="first-name"
             placeholder="First Name"
           />
+          <p class="first-name-error error hidden">
+            First name cannot be empty
+          </p>
           <input
             type="text"
             name="Last Name"
-            id="Last Name"
+            id="last-name"
             placeholder="Last Name"
           />
+          <p class="last-name-error error hidden">Last name cannot be empty</p>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email Address"
           />
+          <p class="email-error error hidden">
+            Looks like this is not an email
+          </p>
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Password"
           />
+          <p class="password-error error hidden">Password cannot be empty</p>
           <button type="submit">Claim your free trial</button>
           <p class="disclaimer">
             By clicking the button, you are agreeing to our
